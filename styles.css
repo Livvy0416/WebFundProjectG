@@ -39,7 +39,7 @@ body {
 }
 
 .card.flipped {
-    background-color: white;
+    background-color: blue;
     transform: rotateY(180deg);
 }
 
