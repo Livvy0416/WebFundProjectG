@@ -1,4 +1,4 @@
-// List of image file names (placeholder for now)
+//this is a list of the images that we want to use for the game-matching
 const imageFilenames = [
     'bird_image.png',
     'deer_image.png',
@@ -11,13 +11,13 @@ const imageFilenames = [
   
 ];
 
-// Duplicate the images
+//this doubles the images so that there is gonna be a matching pair
 const imagePairs = imageFilenames.concat(imageFilenames);
 
-// Shuffle the image pairs
+//this shuffles that images so that it isn't like the same every time
 function shuffleImages() {
     let shuffledImages = [];
-    let tempPairs = imagePairs.slice(); // Copy the image pairs
+    let tempPairs = imagePairs.slice(); //this copies the image pairs
 
     while (tempPairs.length > 0) {
         const randomIndex = Math.floor(Math.random() * tempPairs.length);
@@ -28,21 +28,21 @@ function shuffleImages() {
     return shuffledImages;
 }
 
-// Variables to hold the state of the game
+//this does the actual state of the game so it starts with no matches 
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let matches = 0;
 
-// Get the game board element
+// we need the element of the game 'game-board'
 const gameBoard = document.getElementById('game-board');
 
-// Function to create the cards in the DOM
+// this creates the cards like the board for them
 function createBoard(shuffledImages) {
     for (let i = 0; i < shuffledImages.length; i++) {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
-        cardElement.dataset.index = i; // Set the index as a data attribute
+        cardElement.dataset.index = i; // this index is a data attribute
         cardElement.addEventListener('click', flipCard);
 
         const imgElement = document.createElement('img');
@@ -53,7 +53,7 @@ function createBoard(shuffledImages) {
     }
 }
 
-// Function to flip a card
+//this function flips the cards when clicked on
 function flipCard(event) {
     if (lockBoard) return;
 
@@ -73,21 +73,20 @@ function flipCard(event) {
         checkMatch();
     }
 }
-
-// Function to check if the flipped cards match
+//this sees if the cards match, if they do then they stay
 function checkMatch() {
     const firstImg = firstCard.querySelector('img').src;
     const secondImg = secondCard.querySelector('img').src;
 
     if (firstImg === secondImg) {
         matches++;
-        // Remove event listeners so matched cards can't be flipped again
+        // this removes them from the event so they cant be clicked on again
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
 
         resetBoard();
 
-        // Check if all matches are found
+        // see if everything has been matched, if it did it tells the player- 'You won the game!'
         if (matches === imageFilenames.length) {
             alert('You won the game!');
         }
@@ -102,19 +101,19 @@ function checkMatch() {
     }
 }
 
-// Function to reset the board state
+//this resets the board
 function resetBoard() {
     firstCard = null;
     secondCard = null;
     lockBoard = false;
 }
 
-// Initialize the game when the page loads
+//we need to initalize the page before
 window.addEventListener('DOMContentLoaded', () => {
     // Shuffle the images
     const shuffledImages = shuffleImages();
     
-    // Create the board with shuffled images
+    //creates our board of shuffled images
     createBoard(shuffledImages);
 });
 
