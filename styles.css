@@ -1,18 +1,18 @@
-/* Basic styling for the game board and cards */
+/* this is a basic style for the game */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
+/*this is for our board grid*/
 #game-board {
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(6, 100px);
     gap: 10px;
 }
-
+/*these are for the cards- i switched the colour from a white background bc it blended in too much so now they have blue backs */
 .card {
     width: 100px;
     height: 100px;
@@ -26,7 +26,7 @@ body {
     font-weight: bold;
     transition: transform 0.2s;
 }
-
+/*these are for the images on the card */
 .card img {
     display: none;
     width: 100%;
@@ -37,7 +37,7 @@ body {
 .card.flipped img {
     display: block;
 }
-
+/* this helps with the blue back also when they are flipped face down */
 .card.flipped {
     background-color: blue;
     transform: rotateY(180deg);
