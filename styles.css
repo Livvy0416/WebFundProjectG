@@ -6,7 +6,7 @@ body {
     height: 100vh;
 }
 h1 {
-    color: darkgreen; /* Set the text color to dark green */
+    color: #013220; /* Set the text color to dark green */
     font-weight: bold; /* Make the text bold */
     font-size: 36px; /* Optional: Set the font size for the <h1> element */
     margin-bottom: 10px; /* Optional: Add some space between the heading and the paragraph */
@@ -14,7 +14,7 @@ h1 {
 
 /* Styling the <p> element */
 p {
-    color: darkgreen; /* Set the text color to dark green */
+    color: #013220; /* Set the text color to dark green */
     font-weight: bold; /* Make the text bold */
     font-size: 20px; /* Optional: Set the font size for the <p> element */
     margin-bottom: 20px; /* Optional: Add some space between the paragraph and the game board */
