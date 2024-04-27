@@ -9,7 +9,7 @@ h1 {
     color: #013220; /* Set the text color to dark green */
     font-weight: bold; /* Make the text bold */
     font-size: 36px; /* Optional: Set the font size for the <h1> element */
-    margin-bottom: 10px; /* Optional: Add some space between the heading and the paragraph */
+    margin-top: 10px; /* Optional: Add some space between the heading and the paragraph */
 }
 
 /* Styling the <p> element */
