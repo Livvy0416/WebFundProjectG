@@ -1,7 +1,8 @@
 /*  this is a basic style for the game */
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column:
+    justify-content: start;
     align-items: center;
     height: 100vh;
     margin: 0;
